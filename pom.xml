@@ -132,12 +132,6 @@
 				<artifactId>liquibase-maven-plugin</artifactId>
 				<version>${liquibase.version}</version>
 				<configuration>
-					<propertyFile>${profile.propertyFile}</propertyFile>
-					<changeLogFile>${profile.changeLogFile}</changeLogFile>
-					<dataDir>${profile.dataDir}</dataDir>
-					<!-- log  -->
-					<verbose>${profile.verbose}</verbose>
-					<logging>${profile.logging}</logging>
 					<promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
 				</configuration>
 			</plugin>
