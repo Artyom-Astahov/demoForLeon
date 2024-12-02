@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: demo
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: test
+    password: test
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      minimumIdle: 1
+      maximumPoolSize: 5
+      idleTimeout: 5000
+      poolName: demoApp
+      maxLifetime: 2000000
+      initialization-fail-timeout: 1
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+  liquibase:
+    enabled: true
+    liquibase-schema: public
+    drop-first: false
+    change-log: classpath:dbschema\master-change-log.xml
+logging:
+  level:
+    root: info
+    com.zaxxer.hikari.pool.HikariPool: debug
+
