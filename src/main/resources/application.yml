@@ -13,6 +13,7 @@ spring:
       poolName: demoApp
       maxLifetime: 2000000
       initialization-fail-timeout: 1
+      connection-timeout: 5000
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:

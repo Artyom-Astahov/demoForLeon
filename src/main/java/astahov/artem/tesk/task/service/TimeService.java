@@ -37,7 +37,7 @@ public class TimeService {
 
 
     @Scheduled(fixedRate = 1000)
-    @Retryable(maxAttempts = 3, backoff = @Backoff(delay = 5000))
+    @Retryable(maxAttempts = 5, backoff = @Backoff(delay = 5000))
     @SneakyThrows
     protected void saveFromQueue() {
         if (!queue.isEmpty()) {
