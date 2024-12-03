@@ -8,13 +8,12 @@ import lombok.extern.slf4j.Slf4j;
 import java.time.LocalDateTime;
 
 @Slf4j
-
 public class MyThread implements Runnable {
 
     @Override
     @SneakyThrows
     public void run() {
-        while(true){
+        while (true) {
             TimeEntry entity = new TimeEntry(LocalDateTime.now());
             TimeService.queue.add(entity);
             log.info("Добавил в очередь {}, {}", entity, Thread.currentThread().getName());

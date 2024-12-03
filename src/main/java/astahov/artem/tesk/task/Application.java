@@ -9,13 +9,13 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 public class Application {
 
-	static MyThread myThread;
+    static MyThread myThread;
 
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-		myThread = new MyThread();
-		Thread thread = new Thread(myThread);
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+        myThread = new MyThread();
+        Thread thread = new Thread(myThread);
         thread.start();
-	}
+    }
 
 }

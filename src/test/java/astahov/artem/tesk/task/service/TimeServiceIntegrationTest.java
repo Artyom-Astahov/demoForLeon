@@ -4,6 +4,7 @@ import astahov.artem.tesk.task.persistence.entity.TimeEntryEntity;
 import astahov.artem.tesk.task.persistence.repository.TimeEntryRepository;
 import astahov.artem.tesk.task.service.dto.TimeEntry;
 import astahov.artem.tesk.task.service.mappers.TimeEntryMapperImpl;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Spy;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,10 @@ public class TimeServiceIntegrationTest {
             .withUsername("test")
             .withPassword("test");
 
+    @AfterEach
+    public void tearDown() {
+        database.close();
+    }
 
     @DynamicPropertySource
     static void setDataSourceProperties(DynamicPropertyRegistry registry) {

@@ -20,7 +20,7 @@ public class Controller {
     private final TimeService service;
 
     @GetMapping("/times")
-    public List<TimeEntry> getTimes(){
+    public List<TimeEntry> getTimes() {
         log.debug("Start processing get all TimeEntry");
         return service.getAll();
     }
