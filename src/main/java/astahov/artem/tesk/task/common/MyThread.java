@@ -17,7 +17,8 @@ public class MyThread implements Runnable {
             TimeEntry entity = new TimeEntry(LocalDateTime.now());
             TimeService.queue.add(entity);
             log.info("Добавил в очередь {}, {}", entity, Thread.currentThread().getName());
-            Thread.sleep(1000);
+            long delayMillis = 1000 - (System.currentTimeMillis() % 1000);
+            Thread.sleep(delayMillis);
         }
 
     }
