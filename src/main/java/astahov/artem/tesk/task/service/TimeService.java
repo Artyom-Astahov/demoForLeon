@@ -5,7 +5,6 @@ import astahov.artem.tesk.task.persistence.repository.TimeEntryRepository;
 import astahov.artem.tesk.task.service.dto.TimeEntry;
 import astahov.artem.tesk.task.service.mappers.TimeEntryMapper;
 import jakarta.transaction.Transactional;
-import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.retry.annotation.Backoff;
 import org.springframework.retry.annotation.Retryable;
@@ -39,7 +38,6 @@ public class TimeService {
 
     @Scheduled(fixedRate = 1000)
     @Retryable(maxAttempts = 5, backoff = @Backoff(delay = 5000))
-    @SneakyThrows
     protected void saveFromQueue() {
         synchronized (lock) {
             try{
